@@ -1,5 +1,4 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
-import CopyrightIcon from '@mui/icons-material/Copyright';
 
 export function Footer() {
     return (

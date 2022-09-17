@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTimer } from "react-timer-hook";
 import IconButton from "@material-ui/core/IconButton";
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import { StartRounded } from '@mui/icons-material';
 
 import parseBackend from "../../utils/axios-utils";
 
@@ -12,7 +11,6 @@ function MyTimer({ expiryTimestamp }: any) {
     minutes,
     hours,
     days,
-    isRunning,
     start,
     pause,
     resume,
