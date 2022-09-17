@@ -22,9 +22,29 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
+
+#black-text{
+  color: black;
+}
+
+#github{
+  color: black;
+  margin-left: 10px;
+}
+
+#footer-top{
+  color: black;
+  margin-bottom: 10px;
+}
+
 
 @keyframes App-logo-float {
   0% {
