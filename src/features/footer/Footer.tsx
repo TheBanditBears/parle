@@ -1,18 +1,19 @@
+// import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export function Footer() {
     return (
     <div>
         <span>
           <a
-            className="Github-link"
             href="https://github.com/orgs/TheBanditBears/repositories"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src= "src/assets/images/github.png"/>
-
+            {/* <GitHubIcon/> */}
           </a>
         </span>
+        <GitHubIcon/>
     </div>
     )
   }
