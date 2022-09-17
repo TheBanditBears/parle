@@ -27,7 +27,7 @@ function MyTimer({ expiryTimestamp }: any) {
   const [state, setState] = useState(false);
 
   const toggleState = () => {
-    const res = (state === true) ? start : pause
+    
     console.log(state)
     setState(state => {
 
