@@ -1,17 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import { Footer } from './features/footer/Footer';
 import './App.css';
+import { useTimer } from 'react-timer-hook';
+import Countup  from './features/countup/Countup'
+
 
 function App() {
+
+  const time = 10 * 60 //seconds
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <Footer />
-      </header>
+    <div>
+      <Countup />
     </div>
   );
 }
