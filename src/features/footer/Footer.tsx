@@ -7,9 +7,9 @@ export function Footer() {
 
         <p id='footer-top'>Made with love by Sarah and Niloy.</p>
         <span >
-        <a id='black-text'>
+        <span id='black-text'>
            <CopyrightIcon/> Copywright all rights reserved.
-        </a>
+        </span>
           <a
             id='github black-text'
             href="https://github.com/orgs/TheBanditBears/repositories"
