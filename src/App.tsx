@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import { useTimer } from 'react-timer-hook';
 import Countup  from './features/countup/Countup'
+import { Footer } from './features/footer/Footer';
 
 
 function App() {
-
-  const time = 10 * 60 //seconds
-
   return (
     <div>
       <Countup />
+      <Footer/>
     </div>
   );
 }
