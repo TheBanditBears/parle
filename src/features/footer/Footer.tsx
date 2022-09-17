@@ -10,7 +10,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* <GitHubIcon/> */}
+            <GitHubIcon/>
           </a>
         </span>
         <GitHubIcon/>
