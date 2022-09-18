@@ -1,8 +1,4 @@
 
-import { useEffect } from "react";
-import parseBackend from "../../utils/axios-utils";
-import axios from "axios";
-
 
 export function Score() {
 

@@ -8,7 +8,7 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import parseBackend from "../../utils/axios-utils";
 
 function MyTimer({ expiryTimestamp }: any) {
-  const { seconds, minutes, hours, days, start, pause, resume, restart } =
+  const { seconds, minutes, hours, days, start, pause, restart } =
     useTimer({
       autoStart: false,
       expiryTimestamp,

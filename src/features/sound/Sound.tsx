@@ -1,7 +1,6 @@
 // Taken and inspired from https://medium.com/front-end-weekly/recording-audio-in-mp3-using-reactjs-under-5-minutes-5e960defaf10
 
 import { Button, ButtonGroup, Box } from "@mui/material";
-import ffmpegExport from "../../utils/rrmpeg-utils";
 
 export function Sound() {
   const MicRecorder = require("mic-recorder-to-mp3");
