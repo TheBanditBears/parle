@@ -5,10 +5,10 @@ import { Button, ButtonGroup, Box } from "@mui/material";
 export function Sound() {
   const MicRecorder = require("mic-recorder-to-mp3");
 
-  // New instance
+  // New instance 
   const recorder = new MicRecorder({
     bitRate: 128,
-  });
+  });   
   const startRecording = () => {
     // Start recording. Browser will request permission to use your microphone.
     recorder

@@ -14,11 +14,12 @@ function MyTimer({ expiryTimestamp }: any) {
       expiryTimestamp,
       onExpire: () => console.warn("onExpire called"),
     });
-
   // State true = play
   // State false = pause
 
   const [state, setState] = useState(false);
+
+  console.log(state);
 
   // FinishState false = not finished
   // FinishState true = finished

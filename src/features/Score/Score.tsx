@@ -2,7 +2,7 @@
 
 export function Score() {
 
-    var presScore = 'TBD';
+    // var presScore = 'TBD';
 
     return(
         <div>
