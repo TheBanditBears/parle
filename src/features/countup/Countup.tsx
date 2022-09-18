@@ -1,36 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useTimer } from "react-timer-hook";
 import IconButton from "@material-ui/core/IconButton";
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 import parseBackend from "../../utils/axios-utils";
 
 function MyTimer({ expiryTimestamp }: any) {
-  const {
-    seconds,
-    minutes,
-    hours,
-    days,
-    start,
-    pause,
-    resume,
-    restart
-  } = useTimer({
-    autoStart:false,
-    expiryTimestamp,
-    onExpire: () => console.warn("onExpire called")
-  });
+  const { seconds, minutes, hours, days, start, pause, resume, restart } =
+    useTimer({
+      autoStart: false,
+      expiryTimestamp,
+      onExpire: () => console.warn("onExpire called"),
+    });
 
   // State true = play
   // State false = pause
 
   const [state, setState] = useState(false);
 
+  // FinishState false = not finished
+  // FinishState true = finished
+  const [finishState, setFinishState] = useState(false);
+
   const toggleState = () => {
     
-    console.log(state)
-    setState(state => {
-
+    setState((state) => {
       if (state) {
         pause();
       } else {
@@ -40,43 +36,61 @@ function MyTimer({ expiryTimestamp }: any) {
     });
   };
 
+  const pauseTimer = () => {
+    setState((state) => {
+      if (state){
+        pause();
+      }
+      return false;
+  });
+  }
+
+  const setFinishStateTrue = () => {
+    setFinishState(true);
+    pauseTimer();
+  };
+
   useEffect(() => {
-      parseBackend.get("/")
-      .then(response => response.data)
-      .then(data => {
-          console.log(data);
-      }).catch(e => {
-          console.log(e);
+    parseBackend
+      .get("/")
+      .then((response) => response.data)
+      .then((data) => {
+        console.log(data);
       })
-  }, [state]);
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [finishState]);
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>react-timer-hook </h1>
-      <p>Timer Demo</p>
+    <div className="title" style={{ textAlign: "center" }}>
+      <h1>Parlé</h1>
 
-      <div style={{ fontSize: "100px" }}>
+      <div style={{ fontSize: "100px" }} className="clock">
         <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:
         <span>{seconds}</span>
       </div>
 
-
-      <p>{state ? "Running" : "Not running"}</p>
       <IconButton onClick={toggleState}>
-          <PlayCircleIcon/>
+        <PlayCircleIcon />
       </IconButton>
 
-      <button onClick={pause}>Pause</button>
-      <button onClick={resume}>Resume</button>
-      <button
+      <IconButton
         onClick={() => {
           const time = new Date();
           time.setSeconds(time.getSeconds() + 600);
-          restart(time);
+          setFinishState(false);
+          restart(time, false);
+          pauseTimer();
+
         }}
       >
-        Restart
-      </button>
+        <RestartAltIcon />
+      </IconButton>
+
+      <IconButton onClick={setFinishStateTrue}>
+        <CheckCircleOutlineIcon />
+      </IconButton>
     </div>
   );
 }
