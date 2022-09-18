@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const parseBackend = axios.create({
-    baseURL: "https://api-parle.herokuapp.com/"
+    baseURL: "http://localhost:8080/"
 });
 export default parseBackend;
